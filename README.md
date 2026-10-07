@@ -1,29 +1,14 @@
 # JWST MIRI Spectral Analysis: NGC 7469
 
-This repository contains a Python-based observational astrophysics pipeline developed to extract and analyze mid-infrared spectra from the James Webb Space Telescope (JWST). This project was completed as part of a 120-hour Data-Driven Astronomy internship with the India Space Academy.
+This repository holds the code and extracted data from my 120-hour Data-Driven Astronomy internship[cite: 38]. I used JWST MIRI IFU data to extract and compare mid-infrared spectra from the Seyfert 1 galaxy NGC 7469[cite: 23].
 
-## Scientific Objective
+### The Science
+I wanted to map the physical differences between the AGN-dominated galactic center and the star-forming ring around it[cite: 24, 27]. The extracted spectra clearly show AGN photoionization signatures (strong [S IV] and [Ne VI] lines) in the center, while the ring is dominated by PAH emission and warm molecular hydrogen (H2) lines typical of starburst regions[cite: 25, 28].
 
-The primary goal of this project is to analyze the mid-infrared emission features of the Seyfert 1 galaxy **NGC 7469**. By processing level-3 Integral Field Unit (IFU) data cubes from JWST's MIRI instrument (Channels 1-4), the pipeline extracts and compares the spectra from two distinct physical environments:
-* **The Center Region:** The AGN-dominated galactic nucleus.
-* **The Ring Region:** The surrounding circumnuclear star-forming ring.
+### Repo Notes
+The raw Level-3 `s3d.fits` data cubes from the MAST archive are too large to host on GitHub[cite: 23]. Instead, I've included:
+*   The extracted, rest-frame corrected spectra in `data/` as CSVs[cite: 24, 34, 36].
+*   My Jupyter notebook (`scripts/`) used for masking, extraction, and peak detection[cite: 19].
+*   The final 4-page scientific report and my internship certificate in `docs/`[cite: 26, 38].
 
-## Key Astrophysical Findings
-
-By comparing the extracted spectra across the 5 to 28-micron range, the data reveals distinct ionization mechanisms:
-* **AGN Signatures (Center):** Shows strong high-ionization fine-structure lines like [S IV] (10.51 microns) and [Ne VI] (7.65 microns), consistent with AGN photoionization.
-* **Star Formation Signatures (Ring):** Exhibits significantly enhanced Polycyclic Aromatic Hydrocarbon (PAH) emission (7.7, 8.6, and 11.3 microns) and warm molecular hydrogen lines (H2), which are classic tracers of active star-forming regions.
-
-## Repository Structure
-
-* **`data/`**: Contains the extracted, rest-frame corrected spectral data (`.csv`) and the DS9 region configuration file. *(Note: Raw JWST `s3d.fits` data cubes are excluded from this repository due to GitHub size constraints).*
-* **`scripts/`**: Contains the core Jupyter Notebook (`JWST_MIRI_spectra_analysis.ipynb`) used for WCS coordinate transformations, spatial masking, flux extraction, and automated peak detection.
-* **`output/`**: Contains the generated spectral plots comparing the Center and Ring regions across all MIRI channels.
-* **`docs/`**: Includes the final 4-page scientific report and official internship certification.
-
-## Dependencies
-
-The analysis pipeline requires Python and the following standard astronomical libraries:
-
-```bash
-pip install astropy pandas numpy matplotlib regions scipy
+Requires `astropy`, `regions`, `pandas`, `numpy`, and `matplotlib`[cite: 4, 11].
