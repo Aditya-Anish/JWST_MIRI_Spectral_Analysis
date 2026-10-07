@@ -11,4 +11,4 @@ The raw Level-3 `s3d.fits` data cubes from the MAST archive are too large to hos
 *   My Jupyter notebook (`scripts/`) used for masking, extraction, and peak detection.
 *   The final 4-page scientific report and my internship certificate in `docs/`.
 
-Requires `astropy`, `regions`, `pandas`, `numpy`, and `matplotlib`[cite: 4, 11].
+Requires `astropy`, `regions`, `pandas`, `numpy`, and `matplotlib`.
